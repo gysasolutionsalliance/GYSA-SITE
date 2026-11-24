@@ -1,7 +1,7 @@
 # ★ repo を「GitHubユーザー名/リポジトリ名」に、base_url を公開URLに書き換える
 backend:
    name: git-gateway
-     branch: main
+   branch: main
 locale: ja
 publish_mode: simple
 media_folder: images/uploads
