@@ -1,10 +1,7 @@
 # ★ repo を「GitHubユーザー名/リポジトリ名」に、base_url を公開URLに書き換える
 backend:
-  name: github
-  repo: YOUR-GITHUB-USER/gysa-site
-  branch: main
-  base_url: https://YOUR-SITE.pages.dev
-  auth_endpoint: api/auth
+   name: git-gateway
+     branch: main
 locale: ja
 publish_mode: simple
 media_folder: images/uploads
