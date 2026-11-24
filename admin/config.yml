@@ -1,0 +1,43 @@
+# ★ repo を「GitHubユーザー名/リポジトリ名」に、base_url を公開URLに書き換える
+backend:
+  name: github
+  repo: YOUR-GITHUB-USER/gysa-site
+  branch: main
+  base_url: https://YOUR-SITE.pages.dev
+  auth_endpoint: api/auth
+locale: ja
+publish_mode: simple
+media_folder: images/uploads
+public_folder: /images/uploads
+collections:
+  - name: news
+    label: お知らせ・活動報告
+    files:
+      - name: news
+        label: 記事一覧
+        file: content/news.json
+        fields:
+          - label: 記事
+            name: items
+            widget: list
+            summary: "{{fields.date}} {{fields.title_ja}}"
+            fields:
+              - {label: 公開する, name: published, widget: boolean, default: true}
+              - {label: 日付, name: date, widget: datetime, time_format: false, date_format: "YYYY-MM-DD", format: "YYYY-MM-DD"}
+              - {label: カテゴリー, name: category, widget: select, options: [お知らせ, 募集情報, イベント情報, 活動報告, 国際ニュース]}
+              - {label: タイトル（日本語）, name: title_ja, widget: string}
+              - {label: Title (English), name: title_en, widget: string}
+              - {label: 本文（日本語）, name: body_ja, widget: text}
+              - {label: Body (English), name: body_en, widget: text}
+              - {label: 画像, name: image, widget: image, required: false}
+  - name: settings
+    label: 募集状況
+    files:
+      - name: settings
+        label: 募集状況の表示
+        file: content/settings.json
+        fields:
+          - {label: 状況（日本語）, name: recruit_status_ja, widget: string}
+          - {label: Status (English), name: recruit_status_en, widget: string}
+          - {label: 説明（日本語）, name: recruit_text_ja, widget: text}
+          - {label: Text (English), name: recruit_text_en, widget: text}
